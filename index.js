@@ -20,16 +20,17 @@ const currencies = [
   "HKD",
 ];
 
-// Populate dropdowns
-currencies.forEach((currency) => {
-  let option1 = new Option(currency, currency);
-  let option2 = new Option(currency, currency);
-  fromCurrency.add(option1);
-  toCurrency.add(option2);
-});
+function populateSelect(select, selectedValue) {
+  select.innerHTML = currencies
+    .map(
+      (currency) =>
+        `<option value="${currency}"${currency === selectedValue ? " selected" : ""}>${currency}</option>`,
+    )
+    .join("");
+}
 
-fromCurrency.value = "USD";
-toCurrency.value = "INR";
+populateSelect(fromCurrency, "USD");
+populateSelect(toCurrency, "INR");
 
 const currentTime = document.getElementById("current-time");
 

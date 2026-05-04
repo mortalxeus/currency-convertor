@@ -2,9 +2,33 @@ body {
   font-family: "DM Mono", monospace;
   background: #0e0c0a;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding-top: 60px; /* Space for nav */
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #f5f0e8;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #b8860b;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #0e0c0a;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #b8860b;
 }
 
 .card {
